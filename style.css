@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(img/wave2.png);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.submitBtn {
+  background-color: #af4282;
+  border-radius: 10px;
+  transition: ease 0.4s;
+}
+
+.submitBtn:hover {
+  background-color: #fff;
+  border: 2px solid #af4282;
+  color: #af4282;
+  border-radius: 10px;
+}
+
+.issuetitle {
+  color: #af4282;
+}
