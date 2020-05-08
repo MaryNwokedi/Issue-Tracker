@@ -1,67 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Issue Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/348fc73cb5.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Issue Tracker</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://kit.fontawesome.com/348fc73cb5.js"></script>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body onload="fetchIssues()">
+    <div class="body-image">
+      <h3 class="pt-3 pl-4">Issue Tracker</h3>
+      <img src="img/undraw_freelancer_b0my.svg" />
+      <div class="container py-3">
+        <div class="row">
+          <div class="track-wrapper jumbotron h-50 col-md-5">
+            <h1 class="issuetitle">Add New Issue</h1>
+            <form id="issue-form">
+              <div class="form-group">
+                <label for="issue-desc">Description</label>
+                <input
+                  type="text"
+                  id="issue-desc"
+                  class="form-control"
+                  placeholder="Briefly describe the issue"
+                  required
+                  minlength="5"
+                  maxlength="50"
+                />
+              </div>
 
-<body onload="fetchIssues()">
-  <div class="container py-5">
-    <div class="row">
-      <div class="jumbotron h-50 col-md-5">
-        <h1 class="issuetitle">Add New Issue</h1>
-        <form id="issue-form">
-          <div class="form-group">
-            <label for="issue-desc">Description</label>
-            <input type="text" id="issue-desc" class="form-control" placeholder="Briefly describe the issue" required
-              minlength="5" maxlength="50" autofocus>
+              <div class="form-group">
+                <label for="issue-priority">Priority</label>
+                <select id="issue-priority" class="form-control">
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="issue-worker">Assigned to</label>
+                <input
+                  type="text"
+                  id="issue-worker"
+                  class="form-control"
+                  placeholder="Enter the name of the responsible person"
+                  required
+                  minlength="2"
+                  maxlength="30"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Create Issue
+              </button>
+            </form>
           </div>
 
-          <div class="form-group">
-            <label for="issue-priority">Priority</label>
-            <select id="issue-priority" class="form-control">
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
-            </select>
+          <div class="issues-result col-md-6">
+            <div id="issues-list"></div>
           </div>
-
-          <div class="form-group">
-            <label for="issue-worker">Assigned to</label>
-            <input type="text" id="issue-worker" class="form-control"
-              placeholder="Enter the name of the responsible person" required minlength="2" maxlength="30">
-          </div>
-
-          <button type="submit" class="submitBtn btn btn-primary">Create Issue</button>
-        </form>
-      </div>
-
-      <div class="col-md-7">
-        <div id="issues-list">
         </div>
       </div>
     </div>
 
-
-    <div class="footer">
-      Issue Tracker
-    </div>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
-  </script>
-  <script src="https://chancejs.com/chance.min.js"></script>
-  <script src="main.js"></script>
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://chancejs.com/chance.min.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>

@@ -86,11 +86,11 @@ const issueElement = (issue) => {
     status
   } = issue;
   return `
-  <div class="rounded p-3 border bg-light mb-2">
+  <div class="p-3 result-wrap mb-2">
     <h6>Issue ID: ${id}</h6>
     <h5 class="${getStatusClass(status)}">${status}</h5>
     <p class="${getPriorityClass(priority)}"><i class="fas fa-clock"></i> ${priority} Priority</p>
-    <h3>${desc}</h3>
+    <h4>${desc}</h4>
     <p><i class="fas fa-address-card"></i> ${worker}</p>
     <a href="#" onclick="closeIssue('${id}')" class="btn btn-warning">Close</a>
     <a href="#" onclick="deleteIssue('${id}')" class="btn btn-danger">Delete</a>
